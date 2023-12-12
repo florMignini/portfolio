@@ -2,6 +2,15 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import logo from "../assets/florencia-favicon-color.png";
+type link = {
+  id: string;
+  title: string;
+};
+const navLink = [
+  { id: "1", title: "About" },
+  { id: "2", title: "Work" },
+  { id: "3", title: "Contact" },
+];
 export const Navbar = () => {
   const [active, setActive] = useState("");
   return (
@@ -22,9 +31,20 @@ export const Navbar = () => {
             Florencia | <strong>Fullstack Engineer</strong>
           </p>
         </Link>
-        <p>
-            right links side
-          </p>
+        <ul className="list-none hidden sm:flex flex-row gap-10">
+          {navLink.map((link: link) => (
+            <li
+              key={link.id}
+              className={`${
+                active === link.title ? "text-white" : "text-secondary"
+              } hover:text-white text-sm font-medium cursor-pointer`}
+              onClick={() => setActive(link.title)}
+            >
+              <a href={`#${link.id}`}>{link.title}</a>
+            </li>
+          ))}
+        </ul>
+        {/* mobile nav */}
       </div>
     </nav>
   );
