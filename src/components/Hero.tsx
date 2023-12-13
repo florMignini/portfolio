@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { Me } from "./canvas";
+import {  MeCanvas } from "./canvas";
 export const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
@@ -12,16 +12,20 @@ export const Hero = () => {
           <div className="w-[2px] sm:h-80 h-40 violet-gradient" />
         </div>
         {/* info section */}
-        <div>
-          <h1 className={`${styles.heroHeadText}`}>Hi, I'm <strong className="text-[#4f3cbf]">Florencia</strong></h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Software Engineer 
-            <br className="sm:block hidden "/>
-            fullstack web applications
+        <div
+          className="w-auto h-auto flex flex-col 
+text-3xl
+"
+        >
+          <h1 className={`${styles.heroHeadText} `}>
+            Hi, I'm <strong className="text-[#4f3cbf] ">Florencia.</strong>
+          </h1>
+          <p className={`${styles.heroSubText} mt-2 text-white-100 `}>
+          Software Engineer Fullstack.
           </p>
         </div>
-        <Me/>
       </div>
+      <MeCanvas />
     </section>
   );
 };
