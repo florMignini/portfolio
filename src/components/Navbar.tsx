@@ -7,10 +7,19 @@ type link = {
   id: string;
   title: string;
 };
-const navLink = [
-  { id: "1", title: "About" },
-  { id: "2", title: "Work" },
-  { id: "3", title: "Contact" },
+const navLinks:link[] = [
+  {
+    id: "about",
+    title: "About",
+  },
+  {
+    id: "work",
+    title: "Work",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  },
 ];
 export const Navbar = () => {
   const [active, setActive] = useState<string>("");
@@ -35,7 +44,7 @@ export const Navbar = () => {
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLink.map((link: link) => (
+          {navLinks.map((link: link) => (
             <li
               key={link.id}
               className={`${
@@ -64,7 +73,7 @@ export const Navbar = () => {
             } p-6 black-gradient absolute top-10 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-lg`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
-              {navLink.map((link: link) => (
+              {navLinks.map((link: link) => (
                 <li
                   key={link.id}
                   className={`${
