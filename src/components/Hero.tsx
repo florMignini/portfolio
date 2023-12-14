@@ -20,8 +20,9 @@ text-3xl
           <h1 className={`${styles.heroHeadText} `}>
             Hi, I'm <strong className="text-[#4f3cbf] ">Florencia.</strong>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100 `}>
-          Software Engineer Fullstack.
+          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+            Software Engineer fullstack <br className='sm:block hidden' />
+            <small className="font-thin text-sm">I build exceptional and accessible digital experiences for the web.</small>
           </p>
         </div>
       </div>
