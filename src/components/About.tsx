@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion} from "framer-motion"
 // import { ReactNode } from "react";
 import { fadeIn, textVariant } from "../motion"
@@ -44,7 +45,7 @@ export const About = () => {
     </motion.p>
 
     {/* tech cards */}
-    <div>
+    <div className="px-5 flex items-center justify-evenly flex-wrap gap-3">
       {
         services.map((service:serviceType, index:any)=>(
           <ServiceCard 
