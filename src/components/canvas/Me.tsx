@@ -18,7 +18,7 @@ export const Me = () => {
       />
       <primitive object={computer.scene}
       scale={0.75}
-      position={[2, -2.8, -1.8]}
+      position={[2, -3.5, -1.8]}
       rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>

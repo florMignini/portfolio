@@ -2,6 +2,7 @@ import { Tilt } from "react-tilt"
 import {motion} from "framer-motion"
 import { serviceType } from "."
 import { fadeIn } from "../motion"
+import { BackendIcon } from "../icons"
 
 export const ServiceCard = ({index, title, icon}:serviceType) => {
   return (
@@ -19,11 +20,7 @@ speed:450,
 }}
 className="bg-tertiary rounded-lg py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
 >
-  <img
-  src={icon}
-  alt="techTitle"
-  className="w-16 h-16 object-contain"
-  />
+  {icon}
   <h3
   className="text-white text-base font-bold text-center"
   >{title}</h3>
