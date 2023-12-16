@@ -1,29 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { ReactNode } from "react";
 import { motion} from "framer-motion"
 // import { ReactNode } from "react";
 import { fadeIn, textVariant } from "../motion"
 import { ServiceCard } from ".";
+import { BackendIcon, FrontEndIcon, MobileIcon } from "../icons";
 export type serviceType = {
   title: string,
-  icon: /* ReactNode */string,
+  icon: ReactNode,
   index?: any
 }
 const services:serviceType[] = [
   {
-    title: "Web Developer",
-    icon: "web",
+    title: "Frontend Developer",
+    icon: <FrontEndIcon/>,
   },
   {
     title: "React Native Developer",
-    icon: "mobile",
+    icon: <MobileIcon/>,
   },
   {
     title: "Backend Developer",
-    icon: "backend",
-  },
-  {
-    title: "Content Creator",
-    icon: "creator",
+    icon: <BackendIcon/>,
   },
 ];
 
@@ -31,7 +29,7 @@ export const About = () => {
   return (
     <>
     <motion.div 
-    className="p-2"
+    className="mt-40 p-2"
     variants={textVariant(0.1)}>
       <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">About me.</p>
       <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">Overwiew.</h2>
@@ -45,7 +43,7 @@ export const About = () => {
     </motion.p>
 
     {/* tech cards */}
-    <div className="px-5 flex items-center justify-evenly flex-wrap gap-3">
+    <div className="p-5 flex items-center justify-center flex-wrap gap-10">
       {
         services.map((service:serviceType, index:any)=>(
           <ServiceCard 
