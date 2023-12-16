@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode } from "react";
 import { motion} from "framer-motion"
 // import { ReactNode } from "react";
-import { fadeIn, textVariant } from "../motion"
+import { fadeIn, staggerContainer, textVariant } from "../motion"
 import { ServiceCard } from ".";
 import { BackendIcon, FrontEndIcon, MobileIcon } from "../icons";
 export type serviceType = {
@@ -25,11 +26,20 @@ const services:serviceType[] = [
   },
 ];
 
-export const About = () => {
+export const About = () =>{
   return (
-    <>
+    <motion.section
+    variants={staggerContainer(1, 1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+      className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0"
+    >
+      <span className="hash-span" id="about">
+            &nbsp;
+        </span>
     <motion.div 
-    className="mt-40 p-2"
+    className="p-2"
     variants={textVariant(0.1)}>
       <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">About me.</p>
       <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">Overwiew.</h2>
@@ -43,17 +53,18 @@ export const About = () => {
     </motion.p>
 
     {/* tech cards */}
-    <div className="p-5 flex items-center justify-center flex-wrap gap-10">
+    <div className=" flex flex-wrap items-center justify-evenly">
       {
         services.map((service:serviceType, index:any)=>(
           <ServiceCard 
           key={service.title}
-          // index={index}
+          index={index}
           {...service}
           />
         ))
       }
     </div>
-    </>
+    </motion.section>
   )
 }
+ 

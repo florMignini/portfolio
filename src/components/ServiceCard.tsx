@@ -2,7 +2,6 @@ import { Tilt } from "react-tilt"
 import {motion} from "framer-motion"
 import { serviceType } from "."
 import { fadeIn } from "../motion"
-import { BackendIcon } from "../icons"
 
 export const ServiceCard = ({index, title, icon}:serviceType) => {
   return (
@@ -13,7 +12,8 @@ export const ServiceCard = ({index, title, icon}:serviceType) => {
         variants={fadeIn("right", "spring", 0.5*index, 0.75)}
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
         >
-<div options={
+<div 
+options={
 {max:45,
 scale:1,
 speed:450,
