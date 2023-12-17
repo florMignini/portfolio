@@ -1,6 +1,7 @@
 export * from './About';
 export * from './Contact';
 export * from './Experience';
+export * from './ExperienceCard';
 export * from './FeedBack';
 export * from './Hero';
 export * from './Navbar';
