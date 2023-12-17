@@ -1,30 +1,47 @@
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import { VerticalTimeline } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
-import { styles } from "../styles";
+// import { styles } from "../styles";
 import { staggerContainer, textVariant } from "../motion";
 import { ExperienceCard } from ".";
-interface IExperience {
+import alkemy from "../assets/alkemy.jpeg";
+import software_manager from "../assets/software_manager.png"
+
+export interface IExperience {
   title: string;
-  company_name: string;
+  company_name?: string;
+  icon?: string;
+  iconBg: string;
   date: string;
   points: string[];
 }
 const experiences: IExperience[] = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    // icon: starbucks,
-    // iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    title: "Fullstack Software Engineer",
+    company_name: "Alkemy",
+    icon: alkemy,
+    iconBg: "#383E56",
+    date: "January 2022 - November 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Developed the back end using Node.js and Express, creating RESTful APIs to facilitate seamless communication between the front end and server.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
+      "Designed and implemented the frontend using React, crafting user-friendly interfaces and interactive components",
+    ],
+  },
+  {
+    title: "Frontend Engineer",
+    company_name: "Software Manager",
+    icon: software_manager,
+    iconBg: "#383E56",
+    date: "February 2023 - July 2023",
+    points: [
+      "Collaborated with UX designers to translate wireframes and design concepts into responsive and visually appealing user interfaces.",
+      "Utilized React Js to build interactive and dynamic UI components that improved user engagement",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Conducted user testing and gathered feedback to iterate on UI designs and enhance usability.",
+      "Ensured consistent UI design across multiple devices and screen sizes through responsive design techniques.",
     ],
   },
 ];
@@ -38,6 +55,9 @@ export const Experience = () => {
       viewport={{ once: true, amount: 0.25 }}
       className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0"
     >
+      <span className="hash-span" id="work">
+        &nbsp;
+      </span>
       <motion.div variants={textVariant(0.1)}>
         <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
           My Experience so far.
