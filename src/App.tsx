@@ -8,7 +8,7 @@ import {
   Navbar,
   StarsCanvas,
   TechStack,
-  Works,
+  Projects,
 } from "./components";
 
 
@@ -26,7 +26,7 @@ export const App = () => {
         <About />
         <Experience />
         <TechStack />
-        <Works />
+        <Projects />
         <FeedBack />
         <div className="relative z-0">
           <Contact />

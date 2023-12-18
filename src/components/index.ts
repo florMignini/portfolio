@@ -8,5 +8,5 @@ export * from './Navbar';
 export * from './ServiceCard';
 export * from './StarsCanvas';
 export * from './TechStack';
-export * from './Works';
+export * from './Projects';
 export * from './canvas';
