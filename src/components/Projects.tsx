@@ -1,19 +1,62 @@
-import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer, textVariant } from "../motion";
 import github from "../assets/github.png";
+import { ProjectCard } from ".";
 export interface IProject {
   name: string;
   description: string;
   tags: ITags[];
   image: string;
   source_code_link: string;
+  index?:number
 }
-interface ITags {
+export interface ITags {
   name: string;
   color: string;
 }
 const projects: IProject[] = [
+  {
+    name: "Car Rent",
+    description:
+      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: github,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Car Rent",
+    description:
+      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: github,
+    source_code_link: "https://github.com/",
+  },
   {
     name: "Car Rent",
     description:
