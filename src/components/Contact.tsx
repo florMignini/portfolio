@@ -8,6 +8,7 @@ export interface IForm {
   email: string;
   message: string;
 }
+
 export const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState<IForm>({
@@ -18,8 +19,37 @@ export const Contact = () => {
 
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleChange = () => {};
-  const handleSubmit = () => {};
+  const handleChange = (e: { target: { name: string; value: string } }) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    setLoading(true);
+    const res = await emailjs.send(
+      "service_ol3svc8",
+      "template_qjn5kkk",
+      {
+        from_name: form.name,
+        to_name: "Florencia",
+        from_email: form.email,
+        to_email: "flormignini29@gmail.com",
+        message: form.message,
+      },
+      "DUQWhUJGroyGmdLnZ"
+    );
+    if (res.status === 200) {
+      setLoading(false);
+      alert(`Thanks for your contact. I will get back as soon as possible :)`);
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } else {
+      alert(`Something went wrong. Please try again`);
+    }
+  };
   return (
     <motion.section
       variants={staggerContainer(1, 1)}
@@ -85,9 +115,12 @@ export const Contact = () => {
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
               />
             </label>
-            <button type="submit"
-            className="outline-none bg-tertiary py-3 px-8 w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
-            >{loading ? "Sending..." : "Send"}</button>
+            <button
+              type="submit"
+              className="outline-none bg-tertiary py-3 px-8 w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+            >
+              {loading ? "Sending..." : "Send"}
+            </button>
           </form>
         </motion.div>
       </div>
