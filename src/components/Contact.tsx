@@ -16,6 +16,7 @@ export const Contact = () => {
     email: "",
     message: "",
   });
+  console.log(import.meta.env.VITE_SERVICE_ID)
 
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -27,16 +28,16 @@ export const Contact = () => {
     e.preventDefault();
     setLoading(true);
     const res = await emailjs.send(
-      "service_ol3svc8",
-      "template_qjn5kkk",
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
       {
         from_name: form.name,
         to_name: "Florencia",
         from_email: form.email,
-        to_email: "flormignini29@gmail.com",
+        to_email: import.meta.env.VITE_TO_EMAIL,
         message: form.message,
       },
-      "DUQWhUJGroyGmdLnZ"
+      import.meta.env.VITE_PUBLIC_KEY
     );
     if (res.status === 200) {
       setLoading(false);
