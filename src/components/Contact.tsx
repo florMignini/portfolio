@@ -16,7 +16,6 @@ export const Contact = () => {
     email: "",
     message: "",
   });
-  console.log(import.meta.env.VITE_SERVICE_ID)
 
   const [loading, setLoading] = useState<boolean>(false);
 

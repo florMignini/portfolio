@@ -6,7 +6,7 @@ import {
   // FeedBack,
   Hero,
   Navbar,
-  StarsCanvas,
+  // StarsCanvas,
   TechStack,
   Projects,
 } from "./components";
@@ -19,18 +19,20 @@ export const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-black">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center mb-10">
           <Navbar />
           <Hero />
         </div>
-        <About />
+       <div className="relative z-0 bg-section-texture">
+       <About />
         <Experience />
         <TechStack />
+       </div>
         <Projects />
         {/* <FeedBack /> */}
         <div className="relative z-0">
           <Contact />
-          <StarsCanvas />
+          {/* <StarsCanvas /> */}
         </div>
       </div>
     </BrowserRouter>

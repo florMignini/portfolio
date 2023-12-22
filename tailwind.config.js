@@ -20,6 +20,7 @@ export default {
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/heroBg.jpg')",
+        "section-texture":"url('/src/assets/background.jpg')"
       },
     },
   },

@@ -6,7 +6,7 @@ import { fadeIn } from "../motion"
 export const ServiceCard = ({index, title, icon}:serviceType) => {
   return (
     <Tilt
-    className="xs:w-[250px] w-full"
+    className="xs:w-[250px] w-full py-3"
     >
         <motion.div
         variants={fadeIn("right", "spring", 0.5*index, 0.75)}
