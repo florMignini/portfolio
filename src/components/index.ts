@@ -4,6 +4,7 @@ export * from './Experience';
 export * from './ExperienceCard';
 export * from './FeedBack';
 export * from './Hero';
+export { default as Loader } from './Loader';
 export * from './Navbar';
 export * from './ProjectCard';
 export * from './Projects';
