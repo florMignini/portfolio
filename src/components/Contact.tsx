@@ -2,6 +2,9 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { staggerContainer, slideIn } from "../motion";
+import { IProjectProvider } from "../context/ProjectProvider";
+import { useProjects } from "../hooks/useProjects";
+import { Alert } from "./Alert";
 
 export interface IForm {
   name: string;
@@ -10,6 +13,8 @@ export interface IForm {
 }
 
 export const Contact = () => {
+
+  const {showAlert, alert}:IProjectProvider = useProjects()
   const formRef = useRef();
   const [form, setForm] = useState<IForm>({
     name: "",
@@ -25,6 +30,15 @@ export const Contact = () => {
   };
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+
+    //all fields are required validation
+if ([form.email, form.name, form.message].includes("")) {
+  showAlert({
+    msg: "All fields are required",
+    error: true,
+  });
+  return;
+}
     setLoading(true);
     const res = await emailjs.send(
       import.meta.env.VITE_SERVICE_ID,
@@ -40,16 +54,24 @@ export const Contact = () => {
     );
     if (res.status === 200) {
       setLoading(false);
-      alert(`Thanks for your contact. I will get back as soon as possible :)`);
+      showAlert({
+        msg: "Thanks for your message!, I will get you back as soon as possible!",
+        error: false,
+      });
       setForm({
         name: "",
         email: "",
         message: "",
       });
     } else {
-      alert(`Something went wrong. Please try again`);
+      showAlert({
+      msg: `Something went wrong. Please try again`,
+      error:true
+      })
     }
   };
+
+  
   return (
     <motion.section
       variants={staggerContainer(1, 1)}
@@ -70,37 +92,43 @@ export const Contact = () => {
             Get in touch
           </p>
           <h3 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
-            Contact Me.
+            Send Me a Message.
           </h3>
+           {/* alert msg */}
+           <div className="mb-1">
+                  {alert.msg && <Alert {...alert} />}
+                  </div>
           <form
             ref={formRef}
             onSubmit={handleSubmit}
             className="mt-12 flex flex-col gap-8"
           >
-            {/* name */}
-            <label className="flex flex-col">
+           <div className="flex items-center justify-between gap-5">
+             {/* name */}
+             <label className="flex flex-col">
               <span className="text-white font-semibold mb-4">
-                Name/Company
+               Your Name
               </span>
               <input
                 type="text"
                 name="name"
                 onChange={handleChange}
                 placeholder="What's your/company name"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white outline-none border-none font-medium"
               />
             </label>
             {/* email */}
             <label className="flex flex-col">
-              <span className="text-white font-semibold mb-4">Your Email</span>
+              <span className="text-white font-semibold mb-4">Email Address</span>
               <input
                 type="email"
                 name="email"
                 onChange={handleChange}
                 placeholder="What's your email"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white outline-none border-none font-medium"
               />
             </label>
+           </div>
 
             {/* message */}
             <label className="flex flex-col">
@@ -112,14 +140,28 @@ export const Contact = () => {
                 name="message"
                 onChange={handleChange}
                 placeholder="Leave me your message"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white outline-none border-none font-medium"
               />
             </label>
             <button
               type="submit"
-              className="outline-none bg-tertiary py-3 px-8 w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+              className="w-48 flex items-center justify-between outline-none border-[2px] border-tertiary p-3 text-white font-bold shadow-md shadow-primary"
             >
-              {loading ? "Sending..." : "Send"}
+              {loading ? "Sending..." : "Shoot"}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                />
+              </svg>
             </button>
           </form>
         </motion.div>
