@@ -95,10 +95,10 @@ if ([form.email, form.name, form.message].includes("")) {
           className="flex-[0.75] bg-black-[100] p-8 rounded-2xl"
         >
           <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
-            Get in touch
+            Get in touch.
           </p>
           <h3 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
-            Send Me a Message.
+            Connect with Me.
           </h3>
            {/* alert msg */}
            {
@@ -146,7 +146,7 @@ if ([form.email, form.name, form.message].includes("")) {
                 Your Message
               </span>
               <textarea
-                rows={7}
+                rows={5}
                 name="message"
                 onChange={handleChange}
                 placeholder="Leave me your message"

@@ -21,7 +21,11 @@ export default {
       backgroundImage: {
         "hero-pattern": "url('/src/assets/heroBg.jpg')",
         "section-texture":"url('/src/assets/background.jpg')",
+<<<<<<< HEAD
         "project-bg": "url('src/assets/projectBg.jpg')"
+=======
+        "project-bg": "url('/src/assets/twoWall.jpg')",
+>>>>>>> contact-section
       },
     },
   },

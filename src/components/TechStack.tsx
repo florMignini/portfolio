@@ -87,6 +87,7 @@ export const TechStack = () => {
       <span className="hash-span" id="">
         &nbsp;
       </span>
+<<<<<<< HEAD
 
       <motion.div className=" p-2" variants={textVariant(0.1)}>
         <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
@@ -102,6 +103,30 @@ export const TechStack = () => {
         {technologies.map((technology: ITech) => (
           <div className="w-28 h-28" key={technology.name}>
             <BallCanvas icon={technology.icon} />
+=======
+      <motion.div variants={textVariant(0.1)}
+      className="mb-10"
+      >
+        <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
+          Tech Stack.
+        </p>
+        <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+        Tooling.
+        </h2>
+      </motion.div>
+      {/* content */}
+      <div
+      className="flex flex-row flex-wrap justify-center gap-10 my-20"
+      >
+        {technologies.map((technology:ITech )=> (
+          <div
+          className="w-28 h-28" 
+          key={technology.name}
+          >
+            <BallCanvas
+            icon={technology.icon}
+            />
+>>>>>>> contact-section
           </div>
         ))}
       </div>
