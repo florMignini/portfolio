@@ -2,8 +2,8 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { staggerContainer, slideIn } from "../motion";
-import { IProjectProvider } from "../context/ProjectProvider";
-import { useProjects } from "../hooks/useProjects";
+import { alertType } from "../context/ProjectProvider";
+// import { useProjects } from "../hooks/useProjects";
 import { Alert } from "./Alert";
 
 export interface IForm {
@@ -14,7 +14,7 @@ export interface IForm {
 
 export const Contact = () => {
 
-  const {showAlert, alert}:IProjectProvider = useProjects()
+  // const {showAlert, alert}:IProjectProvider = useProjects()
   const formRef = useRef();
   const [form, setForm] = useState<IForm>({
     name: "",
@@ -23,6 +23,7 @@ export const Contact = () => {
   });
 
   const [loading, setLoading] = useState<boolean>(false);
+  const [alert, setAlert] = useState<alertType>()
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
@@ -33,10 +34,11 @@ export const Contact = () => {
 
     //all fields are required validation
 if ([form.email, form.name, form.message].includes("")) {
-  showAlert({
+  setAlert({
     msg: "All fields are required",
     error: true,
   });
+  setTimeout(() => setAlert({}), 3000);
   return;
 }
     setLoading(true);
@@ -54,20 +56,24 @@ if ([form.email, form.name, form.message].includes("")) {
     );
     if (res.status === 200) {
       setLoading(false);
-      showAlert({
+      setAlert({
         msg: "Thanks for your message!, I will get you back as soon as possible!",
         error: false,
       });
+  setTimeout(() => setAlert({}), 3000);
+
       setForm({
         name: "",
         email: "",
         message: "",
       });
     } else {
-      showAlert({
+      setAlert({
       msg: `Something went wrong. Please try again`,
       error:true
       })
+  setTimeout(() => setAlert({}), 3000);
+
     }
   };
 
@@ -95,9 +101,13 @@ if ([form.email, form.name, form.message].includes("")) {
             Send Me a Message.
           </h3>
            {/* alert msg */}
-           <div className="mb-1">
+           {
+           alert && (
+            <div className="mb-1">
                   {alert.msg && <Alert {...alert} />}
                   </div>
+            )
+           }
           <form
             ref={formRef}
             onSubmit={handleSubmit}
