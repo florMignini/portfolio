@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { styles } from "../styles";
 import logo from "../assets/florencia-favicon-color.png";
 import { BurguerIcon, CloseIcon } from "../icons";
 type link = {

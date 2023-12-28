@@ -11,10 +11,6 @@ import {
   Projects,
 } from "./components";
 
-
-
-
-
 export const App = () => {
   return (
     <BrowserRouter>
@@ -23,18 +19,14 @@ export const App = () => {
           <Navbar />
           <Hero />
         </div>
-       <div className="relative z-0 bg-section-texture">
-       <About />
-        <Experience />
-        <TechStack />
-<<<<<<< HEAD
-        <Projects />
-=======
-       </div >
-       <div className="relative z-0 bg-project-bg">
-       <Projects />
->>>>>>> contact-section
-       </div>
+        <div className="relative z-0 bg-section-texture">
+          <About />
+          <Experience />
+          <TechStack />
+        </div>
+        <div className="relative z-0 bg-project-bg">
+          <Projects />
+        </div>
         {/* <FeedBack /> */}
         <div className="relative z-0">
           <Contact />
