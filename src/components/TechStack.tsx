@@ -15,7 +15,7 @@ import {
   docker,
   threejs,
 } from "../assets";
-import { staggerContainer } from "../motion";
+import { staggerContainer, textVariant } from "../motion";
 export interface ITech {
   name: string;
   icon: string;
@@ -87,9 +87,19 @@ export const TechStack = () => {
       <span className="hash-span" id="">
         &nbsp;
       </span>
+      <motion.div variants={textVariant(0.1)}
+      className="mb-10"
+      >
+        <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
+          Tech Stack.
+        </p>
+        <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+        Tooling.
+        </h2>
+      </motion.div>
       {/* content */}
       <div
-      className="flex flex-row flex-wrap justify-center gap-10"
+      className="flex flex-row flex-wrap justify-center gap-10 my-20"
       >
         {technologies.map((technology:ITech )=> (
           <div

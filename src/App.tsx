@@ -27,8 +27,10 @@ export const App = () => {
        <About />
         <Experience />
         <TechStack />
+       </div >
+       <div className="relative z-0 bg-project-bg">
+       <Projects />
        </div>
-        <Projects />
         {/* <FeedBack /> */}
         <div className="relative z-0">
           <Contact />
