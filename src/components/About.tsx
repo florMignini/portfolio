@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
-// import { ReactNode } from "react";
 import { fadeIn, staggerContainer, textVariant } from "../motion";
 import { ServiceCard } from ".";
 import { BackendIcon, FrontEndIcon, MobileIcon } from "../icons";
@@ -33,12 +32,14 @@ export const About = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0"
+      className="sm:px-16 px-6 sm:py-16 max-w-7xl mx-auto relative z-0"
     >
-      <span className="sm:p-14 p-10" id="about">
+      <span className="sm:p-14 py-36" id="about">
         &nbsp;
       </span>
-      <motion.div className="p-1" variants={textVariant(0.1)}>
+     <div className="flex flex-col 2xl:pt-[13rem]">
+
+     <motion.div className="p-1" variants={textVariant(0.1)}>
         <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
           About me.
         </p>
@@ -56,6 +57,7 @@ export const About = () => {
         designer. Passionate about music, I am always curious to learn more
         about new technologies and creative coding.
       </motion.p>
+     </div>
 
       {/* tech cards */}
       <div className=" flex flex-wrap items-center justify-evenly">
