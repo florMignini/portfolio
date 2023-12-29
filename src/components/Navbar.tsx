@@ -26,7 +26,7 @@ export const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   return (
     <nav
-      className={`text-2xl z-10 text-left px-5 py-3 font-bold backdrop-blur-md fixed w-full bg-black/10 top-0 bg-black`}
+      className={`text-3xl z-10 text-left px-5 py-3 font-bold backdrop-blur-md fixed w-full bg-black/10 top-0 bg-black`}
     >
       <div className="w-full max-w-7xl mx-auto flex justify-between items-center  ">
         <Link
@@ -38,7 +38,7 @@ export const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="w-11 h-11 object-contain z-30" />
-          <p className="text-white  text-sm font-semibold cursor-pointer">
+          <p className="text-black  text-sm font-semibold cursor-pointer">
             Florencia | <strong>Fullstack Engineer</strong>
           </p>
         </Link>
@@ -47,8 +47,8 @@ export const Navbar = () => {
             <li
               key={link.id}
               className={`${
-                active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-sm font-medium cursor-pointer`}
+                active === link.title ? "text-black" : "text-secondary"
+              } hover:text-black text-sm font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
               <a href={`#${link.id}`}>{link.title}</a>
@@ -76,7 +76,7 @@ export const Navbar = () => {
                 <li
                   key={link.id}
                   className={`${
-                    active === link.title ? "text-white" : "text-secondary"
+                    active === link.title ? "text-black" : "text-secondary"
                   } font-poppins text-sm font-medium cursor-pointer`}
                   onClick={() => {
                     setActive(link.title);
