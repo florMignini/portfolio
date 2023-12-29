@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { staggerContainer, slideIn } from "../motion";
 import { alertType } from "../context/ProjectProvider";
-// import { useProjects } from "../hooks/useProjects";
 import { Alert } from "./Alert";
 
 export interface IForm {
@@ -13,7 +12,6 @@ export interface IForm {
 }
 
 export const Contact = () => {
-
   // const {showAlert, alert}:IProjectProvider = useProjects()
   const formRef = useRef();
   const [form, setForm] = useState<IForm>({
@@ -23,7 +21,7 @@ export const Contact = () => {
   });
 
   const [loading, setLoading] = useState<boolean>(false);
-  const [alert, setAlert] = useState<alertType>()
+  const [alert, setAlert] = useState<alertType>();
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
@@ -33,14 +31,14 @@ export const Contact = () => {
     e.preventDefault();
 
     //all fields are required validation
-if ([form.email, form.name, form.message].includes("")) {
-  setAlert({
-    msg: "All fields are required",
-    error: true,
-  });
-  setTimeout(() => setAlert({}), 3000);
-  return;
-}
+    if ([form.email, form.name, form.message].includes("")) {
+      setAlert({
+        msg: "All fields are required",
+        error: true,
+      });
+      setTimeout(() => setAlert({}), 3000);
+      return;
+    }
     setLoading(true);
     const res = await emailjs.send(
       import.meta.env.VITE_SERVICE_ID,
@@ -60,7 +58,7 @@ if ([form.email, form.name, form.message].includes("")) {
         msg: "Thanks for your message!, I will get you back as soon as possible!",
         error: false,
       });
-  setTimeout(() => setAlert({}), 3000);
+      setTimeout(() => setAlert({}), 3000);
 
       setForm({
         name: "",
@@ -69,27 +67,25 @@ if ([form.email, form.name, form.message].includes("")) {
       });
     } else {
       setAlert({
-      msg: `Something went wrong. Please try again`,
-      error:true
-      })
-  setTimeout(() => setAlert({}), 3000);
-
+        msg: `Something went wrong. Please try again`,
+        error: true,
+      });
+      setTimeout(() => setAlert({}), 3000);
     }
   };
 
-  
   return (
     <motion.section
       variants={staggerContainer(1, 1)}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0"
+      className="sm:px-16 px-6 max-w-7xl mx-auto relative z-0"
     >
-      <span className="hash-span" id="contact">
+      <span className="sm:p-10 p-8" id="contact">
         &nbsp;
       </span>
-      <div className="xl:mt-12 xl:flex-row flex-row-reverse flex gap-10 overflow-hidden">
+      <div className="flex items-center justify-start gap-10 overflow-hidden">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
           className="flex-[0.75] bg-black-[100] p-8 rounded-2xl"
@@ -97,48 +93,45 @@ if ([form.email, form.name, form.message].includes("")) {
           <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
             Get in touch.
           </p>
-          <h3 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          <h3 className="text-black font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
             Connect with Me.
           </h3>
-           {/* alert msg */}
-           {
-           alert && (
-            <div className="mb-1">
-                  {alert.msg && <Alert {...alert} />}
-                  </div>
-            )
-           }
+          <div className="w-full border-[1px] mb-3"/>
+          {/* alert msg */}
+          {alert && (
+            <div className="mb-1">{alert.msg && <Alert {...alert} />}</div>
+          )}
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="mt-12 flex flex-col gap-8"
+            className="mt-14 flex flex-col gap-4"
           >
-           <div className="flex items-center justify-between gap-5">
-             {/* name */}
-             <label className="flex flex-col">
-              <span className="text-white font-semibold mb-4">
-               Your Name
-              </span>
-              <input
-                type="text"
-                name="name"
-                onChange={handleChange}
-                placeholder="What's your/company name"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white outline-none border-none font-medium"
-              />
-            </label>
-            {/* email */}
-            <label className="flex flex-col">
-              <span className="text-white font-semibold mb-4">Email Address</span>
-              <input
-                type="email"
-                name="email"
-                onChange={handleChange}
-                placeholder="What's your email"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white outline-none border-none font-medium"
-              />
-            </label>
-           </div>
+            <div className="flex items-center justify-between gap-5">
+              {/* name */}
+              <label className="flex flex-col">
+                <span className="text-white font-semibold mb-4">Your Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  onChange={handleChange}
+                  placeholder="What's your/company name"
+                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white outline-none border-none font-medium"
+                />
+              </label>
+              {/* email */}
+              <label className="flex flex-col">
+                <span className="text-white font-semibold mb-4">
+                  Email Address
+                </span>
+                <input
+                  type="email"
+                  name="email"
+                  onChange={handleChange}
+                  placeholder="What's your email"
+                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white outline-none border-none font-medium"
+                />
+              </label>
+            </div>
 
             {/* message */}
             <label className="flex flex-col">
@@ -146,7 +139,7 @@ if ([form.email, form.name, form.message].includes("")) {
                 Your Message
               </span>
               <textarea
-                rows={5}
+                rows={3}
                 name="message"
                 onChange={handleChange}
                 placeholder="Leave me your message"
