@@ -88,7 +88,7 @@ export const Projects = () => {
       viewport={{ once: true, amount: 0.25 }}
       className="sm:px-16 px-6 sm:py-16 p-10 max-w-7xl mx-auto relative z-0"
     >
-      <span className="sm:p-10" id="">
+      <span className="sm:p-10 xl:p-20" id="">
         &nbsp;
       </span>
       <motion.div variants={textVariant(0.1)}>
