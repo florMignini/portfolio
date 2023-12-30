@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer, textVariant } from "../motion";
-import github from "../assets/github.png";
+import xClone from "../assets/projects/x-clone.png";
+import taskTracker from "../assets/projects/task-tracker.jpeg";
 import { ProjectCard } from ".";
 export interface IProject {
   name: string;
@@ -16,13 +17,13 @@ export interface ITags {
 }
 const projects: IProject[] = [
   {
-    name: "Car Rent",
+    name: "X Clone",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Experience the essence of real-time microblogging with this Twitter Clone, meticulously crafted using Next.js 13. Embrace the power of modern web development as you navigate through a seamless, responsive, and highly interactive user interface.",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
+        name: "next",
+        color: "black-gradient",
       },
       {
         name: "mongodb",
@@ -33,51 +34,31 @@ const projects: IProject[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: github,
+    image: xClone,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Car Rent",
+    name: "Task Tracker",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Immerse yourself in a productivity-enhancing experience with this Trello Clone, meticulously crafted using Vite for the frontend and Express for the backend. Elevate your project management capabilities with a feature-rich, responsive, and collaborative task organization platform.",
     tags: [
       {
-        name: "react",
+        name: "Vite",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Mongo DB",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Tailwind",
         color: "pink-text-gradient",
       },
     ],
-    image: github,
+    image: taskTracker,
     source_code_link: "https://github.com/",
   },
-  {
-    name: "Car Rent",
-    description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: github,
-    source_code_link: "https://github.com/",
-  },
+
 ];
 export const Projects = () => {
   return (
@@ -86,19 +67,18 @@ export const Projects = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="sm:px-16 px-6 sm:py-16 p-10 max-w-7xl mx-auto relative z-0"
+      className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0"
     >
-      <span className="sm:p-10 xl:p-20" id="">
+      <span className="hash-span" id="">
         &nbsp;
       </span>
       <motion.div variants={textVariant(0.1)}>
         <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
           My Projects.
         </p>
-        <h2 className="text-black font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+        <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
           Projects.
         </h2>
-        <div className="w-full border-[1px] mb-3"/>
       </motion.div>
       {/* projects section  head */}
       <div className="w-full flex">

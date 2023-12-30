@@ -19,20 +19,12 @@ export const App = () => {
           <Navbar />
           <Hero />
         </div>
-<<<<<<< HEAD
-        <div className="relative z-0 bg-section-texture">
-=======
         <div className="relative z-0">
->>>>>>> contact-section
           <About />
           <Experience />
           <TechStack />
         </div>
-<<<<<<< HEAD
-        <div className="relative z-0 bg-project-bg">
-=======
         <div className="relative z-0">
->>>>>>> contact-section
           <Projects />
         </div>
         {/* <FeedBack /> */}
