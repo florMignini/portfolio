@@ -19,7 +19,7 @@ export default {
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/heroBg.jpg')",
+        "hero-pattern": "url('/src/assets/heroBg.jpeg')",
         "section-texture":"url('/src/assets/screenBg.jpg')",
       },
     },

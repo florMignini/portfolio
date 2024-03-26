@@ -2,7 +2,7 @@ import { styles } from "../styles";
 import me from "../assets/me-hero.png";
 export const Hero = () => {
   return (
-    <section className="relative w-full h-screen mx-auto">
+    <section className="relative w-full h-screen mx-auto bg-blur text-black">
       <div
         className={`${styles.paddingX} absolute inset-0 top-[150px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
