@@ -1,46 +1,27 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/florencia-favicon-color.png";
+import logo from "../assets/florencia-logo-black-transparent.png";
 import { BurguerIcon, CloseIcon } from "../icons";
-type link = {
-  id: string;
-  title: string;
-};
-const navLinks:link[] = [
-  {
-    id: "about",
-    title: "About",
-  },
-  {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-  },
-];
+import { navLinks, link } from "../data/navLinks";
+
 export const Navbar = () => {
   const [active, setActive] = useState<string>("");
   // burguer menu state
   const [toggle, setToggle] = useState<boolean>(false);
   return (
     <nav
-      className={`text-3xl z-10 text-left px-5 py-3 font-bold backdrop-blur-md fixed w-full bg-black/10 top-0 bg-black`}
+      className={`text-3xl z-10 text-left px-5 py-3 font-bold backdrop-blur-md fixed w-full h-20 bg-black/10 top-0 bg-black my-auto`}
     >
-      <div className="w-[60%] max-w-7xl mx-auto flex justify-between items-center  ">
+      <div className="w-[80%] lg:w-[60%] max-w-7xl mx-auto flex justify-between items-center  ">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center justify-center gap-2"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-16 h-2w-16 object-contain z-30" />
-          <p className="text-black  text-sm font-semibold cursor-pointer">
-            Florencia | <strong>Fullstack Engineer</strong>
-          </p>
+          <img src={logo} alt="logo" className="w-36 h-16 object-contain z-30 " />
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link: link) => (
