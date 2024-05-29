@@ -15,7 +15,7 @@ export const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0  bg-section-texture">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center mb-10">
+        <div className="bg-black mb-10">
           <Navbar />
           <Hero />
         </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/florencia-logo-black-transparent.png";
+import logo from "../assets/florencia-logo-white-transparent.png";
 import { BurguerIcon, CloseIcon } from "../icons";
 import { navLinks, link } from "../data/navLinks";
 

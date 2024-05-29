@@ -2,13 +2,11 @@ import { styles } from "../styles";
 import me from "../assets/me-hero.png";
 export const Hero = () => {
   return (
-    <section className="relative w-full h-screen mx-auto bg-blur text-black">
+    <section className="relative w-full h-screen mx-auto bg-blur black-gradient text-black">
       <div
         className={`${styles.paddingX} absolute inset-0 top-[150px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
         <div className="absolute left-28 lg:pl-0 flex flex-col justify-center items-center top-24">
-          <div className="w-3 h-3 rounded-full bg-[#692cee]" />
-          <div className="w-[2px] sm:h-80 h-40 violet-gradient" />
         </div>
         {/* info section */}
         <div
