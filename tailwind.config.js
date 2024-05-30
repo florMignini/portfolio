@@ -6,9 +6,9 @@ export default {
     extend: {
       colors: {
         primary: "#050816",
-        secondary: "#fcf9f9",
-        tertiary: "#151030",
-        "black-100": "#100d25",
+        text: "#6ee2f5",
+        "text-hover": "#5bc3d3",
+        background: "#000000",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
       },
