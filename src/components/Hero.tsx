@@ -1,5 +1,5 @@
 import { styles } from "../styles";
-import me from "../assets/me-hero.png";
+// import me from "../assets/me-hero.png";
 export const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto bg-blur bg-background text-black">
@@ -9,7 +9,7 @@ export const Hero = () => {
         <div className="absolute left-28 lg:pl-0 flex flex-col justify-center items-center top-24">
         </div>
         {/* info section */}
-        <div
+        {/* <div
           className="h-[80%] w-fill absolute left-36 bottom-5 flex flex-col gap-5 
 text-3xl
 "
@@ -24,9 +24,9 @@ text-3xl
               I love to build beautiful, intuitive and accessible digital experiences with effective usability for the
               web.
             </small>
-        </div>
+        </div> */}
 
-        <img src={me} alt="me-hero-image" className="h-[80%] w-fill absolute right-64 bottom-24" />
+        {/* <img src={me} alt="me-hero-image" className="h-[80%] w-fill absolute right-64 bottom-24" /> */}
       </div>
     </section>
   );
