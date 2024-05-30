@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/florencia-logo-white-transparent.png";
+import logo from "../assets/logo-no-background.svg";
 import { BurguerIcon, CloseIcon } from "../icons";
 import { navLinks, link } from "../data/navLinks";
 
@@ -10,32 +10,40 @@ export const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   return (
     <nav
-      className={`text-3xl z-10 text-left px-5 py-3 font-bold backdrop-blur-md fixed w-full h-20 bg-black/10 top-0 bg-black my-auto`}
+      className={`text-3xl z-10 text-left px-5 py-3 font-bold backdrop-blur-md fixed w-full h-28 bg-black/10 top-0 bg-background`}
     >
-      <div className="w-[80%] lg:w-[60%] max-w-7xl mx-auto flex justify-between items-center  ">
+      <div className="w-[80%] lg:w-[50%] h-full max-w-7xl mx-auto flex justify-between items-center  ">
+        {/* Logo section */}
         <Link
           to="/"
-          className="flex items-center justify-center gap-2"
+          className="w-[30%] flex items-center justify-center gap-2"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-36 h-16 object-contain z-30 " />
+          <img
+            src={logo}
+            alt="logo"
+            className="w-36 h-28 object-contain z-30 "
+          />
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((link: link) => (
-            <li
-              key={link.id}
-              className={`${
-                active === link.title ? "text-black" : "text-secondary"
-              } hover:text-black text-sm font-medium cursor-pointer`}
-              onClick={() => setActive(link.title)}
-            >
-              <a href={`#${link.id}`}>{link.title}</a>
-            </li>
-          ))}
-        </ul>
+        {/*Links section  */}
+        <div className="w-[70%] mx-auto flex ">
+          <ul className="w-[100%] list-none hidden sm:flex items-center justify-center flex-row gap-10">
+            {navLinks.map((link: link) => (
+              <li
+                key={link.id}
+                className={`${
+                  active === link.title ? "text-white" : "text-text"
+                } hover:text-text-hover text-base font-bold cursor-pointer`}
+                onClick={() => setActive(link.title)}
+              >
+                <a href={`#${link.id}`}>{link.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
         {/* mobile nav */}
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <button
