@@ -9,7 +9,7 @@ export const Hero = () => {
         {/* hero upper section */}
         <div
           className="h-[80%] w-[50%] absolute left-1 top-0 flex flex-col gap-5 
-text-3xl text-[#4f3cbf] text-end
+text-3xl text-text-title text-end
 "
         >
           <div className="w-[95%]">
