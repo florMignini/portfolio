@@ -55,7 +55,7 @@ export const Experience = () => {
       viewport={{ once: true, amount: 0.25 }}
       className="sm:px-16 px-6 sm:py-16 max-w-7xl mx-auto relative z-0"
     >
-      <span className="sm:p-10 lg:py-24 text-text" id="work">
+      <span className="sm:p-10 lg:py-24 py-28 text-text" id="work">
         &nbsp;
       </span>
       <motion.div variants={textVariant(0.1)}>

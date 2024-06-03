@@ -80,12 +80,12 @@ export const Contact = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0 mt-28"
+      className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0"
     >
       <span className="sm:p-10 xl:py-20 p-8" id="contact">
         &nbsp;
       </span>
-      <div className="flex 2xl:py-48 items-center justify-start gap-10 overflow-hidden">
+      <div className="flex 2xl:py-24 lg:py-36 py-52 items-center justify-start gap-10 overflow-hidden">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
           className="flex-[0.75] bg-black-[100] p-8 rounded-2xl"

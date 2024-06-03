@@ -35,7 +35,7 @@ const projects: IProject[] = [
       },
     ],
     image: xClone,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/florMignini/twitter-clone/",
   },
   {
     name: "Task Tracker",
@@ -56,7 +56,7 @@ const projects: IProject[] = [
       },
     ],
     image: taskTracker,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/florMignini/task-tracker-client/",
   },
 ];
 export const Projects = () => {
