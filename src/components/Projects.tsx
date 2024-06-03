@@ -9,7 +9,7 @@ export interface IProject {
   tags: ITags[];
   image: string;
   source_code_link: string;
-  index?:number
+  index?: number;
 }
 export interface ITags {
   name: string;
@@ -22,15 +22,15 @@ const projects: IProject[] = [
       "Experience the essence of real-time microblogging with this Twitter Clone, meticulously crafted using Next.js 13. Embrace the power of modern web development as you navigate through a seamless, responsive, and highly interactive user interface.",
     tags: [
       {
-        name: "next",
-        color: "black-gradient",
+        name: "Next",
+        color: "orange-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Mongo DB",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Tailwind",
         color: "pink-text-gradient",
       },
     ],
@@ -58,7 +58,6 @@ const projects: IProject[] = [
     image: taskTracker,
     source_code_link: "https://github.com/",
   },
-
 ];
 export const Projects = () => {
   return (
@@ -69,14 +68,14 @@ export const Projects = () => {
       viewport={{ once: true, amount: 0.25 }}
       className="sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0"
     >
-      <span className="hash-span" id="">
+      <span className="hash-span" id="project">
         &nbsp;
       </span>
       <motion.div variants={textVariant(0.1)}>
-        <p className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
+        <p className="sm:text-[18px] text-[14px] text-text uppercase tracking-wider">
           My Projects.
         </p>
-        <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+        <h2 className="text-text-title font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
           Projects.
         </h2>
       </motion.div>
@@ -84,22 +83,16 @@ export const Projects = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-sm max-w-3xl leading-[30px]"
+          className="mt-3 text-text text-base font-semibold max-w-3xl leading-[30px]"
         >
-          brief projects Description and skill learned from the proccess
+          Brief projects description and skill learned from the proccess
         </motion.p>
       </div>
       {/* project card */}
-      <div className="mt-20 flex flex-wrap gap-7">
-{
-projects.map((project:IProject, index:number) =>(
-<ProjectCard
-key={`project-${index}`}
-{...project}
-index={index}
-/>
-))
-}
+      <div className="mt-5  flex flex-wrap gap-7">
+        {projects.map((project: IProject, index: number) => (
+          <ProjectCard key={`project-${index}`} {...project} index={index} />
+        ))}
       </div>
     </motion.section>
   );

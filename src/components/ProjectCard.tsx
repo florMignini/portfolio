@@ -20,7 +20,7 @@ export const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="black-gradient p-5 rounded-2xl sm:w-[360px] w-full"
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -43,13 +43,13 @@ export const ProjectCard = ({
         </div>
         {/* project description */}
         <div className="mt-5">
-          <h3 className="text-white font-bold text-lg">{name}</h3>
-          <p className="mt-2 text-secondary text-sm">{description}</p>
+          <h3 className="text-text-title font-bold text-lg">{name}</h3>
+          <p className="mt-2 h-[200px] text-ellipsis text-text text-base font-light">{description}</p>
         </div>
         {/* tech tags */}
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-3 flex flex-wrap items-center justify-evenly">
           {tags.map((tag: ITags) => (
-            <p key={tag.name} className={`text-sm ${tag.color}`}>
+            <p key={tag.name} className={`text-sm font-extrabold ${tag.color}`}>
               {tag.name}
             </p>
           ))}
