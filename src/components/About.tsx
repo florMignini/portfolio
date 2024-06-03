@@ -35,7 +35,7 @@ export const About = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="sm:px-16 px-6 sm:py-16 max-w-7xl mx-auto relative z-0"
+      className="sm:px-16 px-6 sm:py-16 max-w-7xl mx-auto relative z-0 mt-20 mb-56"
     >
       <span className="sm:p-14 py-24" id="about">
         &nbsp;
