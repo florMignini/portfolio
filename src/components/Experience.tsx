@@ -65,7 +65,6 @@ export const Experience = () => {
         <h2 className="text-text-title font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
           Work Experience.
         </h2>
-        <div className="w-full border-[1px] mb-3"/>
       </motion.div>
       <div className="mt-1 flex flex-col">
         <VerticalTimeline>

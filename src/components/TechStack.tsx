@@ -96,7 +96,6 @@ export const TechStack = () => {
         <h2 className="text-text-title font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
         Tooling.
         </h2>
-        <div className="w-full text-text border-[1px] mb-3"/>
       </motion.div>
       {/* content */}
       <div

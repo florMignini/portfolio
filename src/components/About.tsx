@@ -49,8 +49,6 @@ export const About = () => {
         <h2 className="text-text-title font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
           Overwiew.
         </h2>
-
-        <div className="w-full border-[1px] mb-1" />
       </motion.div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
