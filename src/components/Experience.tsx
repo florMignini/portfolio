@@ -59,7 +59,7 @@ export const Experience = () => {
         &nbsp;
       </span>
       <motion.div variants={textVariant(0.1)}>
-        <p className="sm:text-[18px] text-[14px] text-text uppercase tracking-wider">
+        <p className="sm:text-[18px] text-[14px] text-text uppercase tracking-wider mt-20">
           My Experience so far.
         </p>
         <h2 className="text-text-title font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
