@@ -1,5 +1,5 @@
 import { styles } from "../styles";
-import me from "../assets/github.png";
+import me from "../assets/front.png";
 export const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto bg-blur bg-background text-black">
