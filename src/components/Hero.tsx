@@ -1,36 +1,57 @@
-import { styles } from "../styles";
 import me from "../assets/front.png";
+import github from "../icons/github.svg";
+import twitter from "../icons/twitter.svg";
+import instagram from "../icons/instagram.svg";
 export const Hero = () => {
   return (
-    <section className="relative w-full h-screen mx-auto bg-blur bg-background text-black">
-      <div
-        className={`${styles.paddingX} absolute inset-0 top-48 w-[100%] mx-auto flex flex-row items-start gap-5`}
-      >
-        {/* hero upper section */}
-        <div
-          className="h-[80%] w-[50%] absolute left-1 top-0 flex flex-col gap-5 
-text-3xl text-text-title text-end
-"
-        >
-          <div className="w-[95%]">
-            <h1 className="text-5xl font-light ">
-              Hi, I'm <strong className="text-bold text-6xl">Florencia.</strong>
-            </h1>
-            <h3 className="w-[100%]  text-3xl font-bold mt-5 text-text">
-              Software Engineer Fullstack <br className="sm:block hidden" />
+    <section className="relative top-40 flex items-center justify-center">
+      {/* text section */}
+      <div className="w-[60%] mx-auto flex items-center justify-end gap-2 bg-transparent">
+        <div className="w-1 h-32 bg-text" />
+
+        <div className="flex flex-col items-center justify-center gap-2">
+          {/* text */}
+          <div className="flex items-center justify-end flex-col text-text">
+            <h1 className="flex items-center text-4xl">Florencia Mignini</h1>
+            <h3 className="flex items-center text-xl font-light text-[rgb(112,95,147)]">
+              Fullstack Software Engineer
             </h3>
           </div>
-          <small className="w-[100%] font-thin text-base text-text">
-            I love to build beautiful, intuitive and accessible digital
-            experiences with effective usability for the web.
-          </small>
+          {/* social media icons */}
+          <div className="w-[90%] flex items-center justify-evenly">
+            {/* github */}
+            <a
+              href="https://github.com/florMignini"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#106CBA] hover:text-[#004587] text-sm font-semibold"
+            >
+              <img src={github} alt="github-logo" />
+            </a>
+            {/* twitter */}
+            <a
+              href="https://github.com/florMignini"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#106CBA] hover:text-[#004587] text-sm font-semibold"
+            >
+              <img src={twitter} alt="twitter-logo" />
+            </a>
+            {/* instagram */}
+            <a
+              href="https://github.com/florMignini"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#106CBA] hover:text-[#004587] text-sm font-semibold"
+            >
+              <img src={instagram} alt="instagram-logo" />
+            </a>
+          </div>
         </div>
-
-        <img
-          src={me}
-          alt="me-hero-image"
-          className="h-[80%] w-[60%] absolute object-contain right-1"
-        />
+      </div>
+      {/* image */}
+      <div className="w-[80%] flex items-center justify-start">
+        <img src={me} alt="me-image" className="opacity-70" />
       </div>
     </section>
   );

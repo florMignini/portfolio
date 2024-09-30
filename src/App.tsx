@@ -15,11 +15,12 @@ export const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0  bg-section-texture">
-        <div className="bg-black mb-10">
+        <div className="">
           <Navbar />
           <Hero />
         </div>
-        <div className="relative z-0">
+
+        <div className="relative z-0 top-3">
           <About />
           <Experience />
           <TechStack />
