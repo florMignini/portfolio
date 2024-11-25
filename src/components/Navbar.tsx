@@ -10,7 +10,7 @@ export const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   return (
     <nav
-      className={`text-3xl z-10 text-left px-5 py-3 font-bold backdrop-blur-md fixed w-full h-28 bg-black/10 top-0 bg-background`}
+      className={`text-3xl z-10 text-left px-5 py-3 font-bold backdrop-blur-sm fixed w-full h-28 bg-black/10 top-0 bg-background`}
     >
       <div className="w-[80%] lg:w-[50%] h-full max-w-7xl mx-auto flex justify-between items-center  ">
         {/* Logo section */}

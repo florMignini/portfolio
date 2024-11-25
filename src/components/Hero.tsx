@@ -4,16 +4,16 @@ import twitter from "../icons/twitter.svg";
 import instagram from "../icons/instagram.svg";
 export const Hero = () => {
   return (
-    <section className="relative top-40 flex items-center justify-center">
+    <section className="relative w-full md:w-[90%] 2xl:w-[80%] h-screen bottom-10 xl:bottom-0 md:top-10 xl:top-24 flex items-center justify-center mx-auto">
       {/* text section */}
-      <div className="w-[60%] mx-auto flex items-center justify-end gap-2 bg-transparent">
+      <div className="absolute z-10 left-10 bottom-10 md:bottom-16 lg:h-screen mx-auto flex items-center justify-end gap-2 bg-transparent">
         <div className="w-1 h-32 bg-text" />
 
         <div className="flex flex-col items-center justify-center gap-2">
           {/* text */}
           <div className="flex items-center justify-end flex-col text-text">
-            <h1 className="flex items-center text-4xl">Florencia Mignini</h1>
-            <h3 className="flex items-center text-xl font-light text-[rgb(112,95,147)]">
+            <h1 className="flex items-center text-5xl xl:text-6xl">Florencia Mignini</h1>
+            <h3 className="flex items-center text-2xl xl:text-4xl font-light text-[rgb(112,95,147)]">
               Fullstack Software Engineer
             </h3>
           </div>
@@ -30,7 +30,7 @@ export const Hero = () => {
             </a>
             {/* twitter */}
             <a
-              href="https://github.com/florMignini"
+              href="https://x.com/mariflor_la"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#106CBA] hover:text-[#004587] text-sm font-semibold"
@@ -39,7 +39,7 @@ export const Hero = () => {
             </a>
             {/* instagram */}
             <a
-              href="https://github.com/florMignini"
+              href="https://www.instagram.com/flor.mignini/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#106CBA] hover:text-[#004587] text-sm font-semibold"
@@ -50,9 +50,10 @@ export const Hero = () => {
         </div>
       </div>
       {/* image */}
-      <div className="w-[80%] flex items-center justify-start">
-        <img src={me} alt="me-image" className="opacity-70" />
+      <div className="absolute h-screen w-full flex items-center justify-right">
+        <img src={me} alt="me-image" className="absolute w-auto  bg-auto right-0 md:bg-cover opacity-70 h-[75%] md:h-[90%] xl:h-[100%] bottom-0" />
       </div>
     </section>
+
   );
 };
