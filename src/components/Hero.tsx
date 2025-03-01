@@ -4,7 +4,15 @@ import twitter from "../icons/twitter.svg";
 import instagram from "../icons/instagram.svg";
 export const Hero = () => {
   return (
-    <section className="relative w-full md:w-[90%] 2xl:w-[80%] h-screen bottom-10 xl:bottom-0 md:top-10 xl:top-24 flex items-center justify-center mx-auto">
+    <section className="relative min-h-screen w-full 2xl:w-[80%] h-screen xl:bottom-0 md:top-12 xl:top-24 flex items-center justify-center mx-auto">
+
+      {/* image */}
+      <div className="absolute h-screen w-full flex items-center justify-right">
+        <img src={me} alt="me-image" className="absolute w-auto  bg-auto right-0 md:bg-cover opacity-70 h-[80%] xl:h-[100%] bottom-0" />
+      </div>
+      {/* overlay option for improving legibility */}
+      <div className="absolute inset-0 bg-black opacity-30"></div>
+      
       {/* text section */}
       <div className="absolute z-10 left-10 bottom-10 md:bottom-16 lg:h-screen mx-auto flex items-center justify-end gap-2 bg-transparent">
         <div className="w-1 h-32 bg-text" />
@@ -49,10 +57,7 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      {/* image */}
-      <div className="absolute h-screen w-full flex items-center justify-right">
-        <img src={me} alt="me-image" className="absolute w-auto  bg-auto right-0 md:bg-cover opacity-70 h-[75%] md:h-[90%] xl:h-[100%] bottom-0" />
-      </div>
+      
     </section>
 
   );
