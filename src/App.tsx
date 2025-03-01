@@ -14,8 +14,8 @@ import {
 export const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0  bg-section-texture">
-        <div className="">
+      <div className="relative z-0 min-h-screen bg-section-texture">
+        <div className=" w-full">
           <Navbar />
           <Hero />
         </div>
