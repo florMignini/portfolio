@@ -37,7 +37,7 @@ export const About = () => {
       viewport={{ once: true, amount: 0.25 }}
       className="sm:px-16 px-6 sm:py-16 max-w-7xl mx-auto relative z-0"
     >
-      <span className="sm:p-14 py-24" id="about">
+      <span className="py-14 md:py-48" id="about">
         &nbsp;
       </span>
      <div className="flex flex-col 2xl:pt-[13rem]">
