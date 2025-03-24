@@ -15,7 +15,7 @@ export const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 min-h-screen bg-section-texture">
-        <div className=" w-full">
+        <div className="bg-[#010101] w-full">
           <Navbar />
           <Hero />
         </div>
