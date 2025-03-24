@@ -13,7 +13,7 @@ export interface IForm {
 
 export const Contact = () => {
   // const {showAlert, alert}:IProjectProvider = useProjects()
-  const formRef = useRef();
+  const formRef = useRef<HTMLFormElement>(null);
   const [form, setForm] = useState<IForm>({
     name: "",
     email: "",
@@ -85,7 +85,7 @@ export const Contact = () => {
       <span className="sm:p-10 xl:py-20 p-8" id="contact">
         &nbsp;
       </span>
-      <div className="flex 2xl:py-24 lg:py-36 py-52 items-center justify-start gap-10 overflow-hidden">
+      <div className="flex 2xl:py-16 lg:py-24 py-28 items-center justify-start gap-10 overflow-hidden">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
           className="flex-[0.75] bg-black-[100] p-8 rounded-2xl"
