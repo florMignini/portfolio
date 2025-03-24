@@ -1,18 +1,17 @@
-import me from "../assets/front.png";
+import me from "../assets/meHero.jpg";
 import github from "../icons/github.svg";
 import twitter from "../icons/twitter.svg";
 import instagram from "../icons/instagram.svg";
 export const Hero = () => {
-  return (
-    <section className="relative min-h-screen w-full 2xl:w-[80%] h-screen xl:bottom-0 md:top-12 xl:top-24 flex items-center justify-center mx-auto">
+  /* section-  2xl:w-[80%] xl:bottom-0 md:top-[-12px] xl:top-0 flex items-center justify-center mx-auto */
 
+  /*  */
+  return (
+    <section className="relative h-screen w-full top-0">
       {/* image */}
-      <div className="absolute h-screen w-full flex items-center justify-right">
-        <img src={me} alt="me-image" className="absolute w-auto  bg-auto right-0 md:bg-cover opacity-70 h-[80%] xl:h-[100%] bottom-0" />
+      <div className="absolute h-screen w-full flex items-center justify-right bottom-[10%] right-[15%]">
+        <img src={me} alt="me-image" className="absolute w-auto  bg-auto right-0 md:bg-cover h-[80%] xl:h-[100%] bottom-0 rounded-lg" />
       </div>
-      {/* overlay option for improving legibility */}
-      <div className="absolute inset-0 bg-black opacity-30"></div>
-      
       {/* text section */}
       <div className="absolute z-10 left-10 bottom-10 md:bottom-16 lg:h-screen mx-auto flex items-center justify-end gap-2 bg-transparent">
         <div className="w-1 h-32 bg-text" />
