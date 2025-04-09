@@ -85,7 +85,7 @@ export const Contact = () => {
       <span className="sm:p-10 xl:py-20 p-8" id="contact">
         &nbsp;
       </span>
-      <div className="flex 2xl:py-16 lg:py-24 py-28 items-center justify-start gap-10 overflow-hidden">
+      <div className="flex 2xl:py-16 min-[768px]:py-16 lg:py-24 py-9 items-center justify-start gap-10 overflow-hidden">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
           className="flex-[0.75] bg-black-[100] p-8 rounded-2xl"
@@ -106,9 +106,9 @@ export const Contact = () => {
             onSubmit={handleSubmit}
             className="mt-14 flex flex-col gap-4"
           >
-            <div className="flex items-center justify-start gap-5">
+            <div className="w-full flex flex-wrap min-[1024px]:flex-block items-center justify-start gap-5">
               {/* name */}
-              <label className="w-[50%] flex flex-col">
+              <label className="w-[100%] flex flex-col">
                 <span className="text-text font-semibold mb-4">Your Name</span>
                 <input
                   type="text"
@@ -119,7 +119,7 @@ export const Contact = () => {
                 />
               </label>
               {/* email */}
-              <label className="w-[50%] flex flex-col">
+              <label className="w-[100%] flex flex-col">
                 <span className="text-text font-semibold mb-4">
                   Email Address
                 </span>
